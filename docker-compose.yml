@@ -1,0 +1,10 @@
+#this file is written to build  the docker image of the docker container we created via Dockerfile and run the container using docker-compose.... Mane without docker compose puro container run h6ilo akhn using this image created will be run.
+services:
+  nodeapp:
+    build:
+    #context is the directory where the docker file is located(here its in the current directory so we used .) and docker file is the name of the docker file in our repository which we want to use to build the image.
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8080:8080"  
